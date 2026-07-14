@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(rgba(255,255,255,0.75),rgba(240,255,240,0.75)),
+    url("cphoto.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+header{
+    background:#ffb6c1;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    width:85%;
+    margin:40px auto;
+    background:rgba(255,255,255,0.9);
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    color:#ff4f9d;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#98d998;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f9fff9;
+}
+
+tr:hover{
+    background:#ffeef5;
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 20px;
+    background:#ffb6c1;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.back:hover{
+    background:#98d998;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Student Attendance</h1>
+</header>
+
+<div class="container">
+
+<h2>Attendance Record</h2>
+
+<table>
+
+<tr>
+<th>Subject</th>
+<th>Total Classes</th>
+<th>Present</th>
+<th>Absent</th>
+<th>Attendance %</th>
+</tr>
+
+<tr>
+<td>Mathematics</td>
+<td>40</td>
+<td>36</td>
+<td>4</td>
+<td>90%</td>
+</tr>
+
+<tr>
+<td>Java Programming</td>
+<td>35</td>
+<td>32</td>
+<td>3</td>
+<td>91%</td>
+</tr>
+
+<tr>
+<td>Database Management</td>
+<td>38</td>
+<td>35</td>
+<td>3</td>
+<td>92%</td>
+</tr>
+
+<tr>
+<td>Computer Networks</td>
+<td>36</td>
+<td>31</td>
+<td>5</td>
+<td>86%</td>
+</tr>
+
+<tr>
+<td>Operating System</td>
+<td>34</td>
+<td>30</td>
+<td>4</td>
+<td>88%</td>
+</tr>
+
+</table>
+
+<a href="dashboard.html" class="back">← Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

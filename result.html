@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Result</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(rgba(255,255,255,0.75), rgba(240,255,240,0.75)),
+    url("cphoto.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+header{
+    background:#ffb6c1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:85%;
+    margin:40px auto;
+    background:rgba(255,255,255,0.92);
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    color:#ff69b4;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#98d998;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f9fff9;
+}
+
+tr:hover{
+    background:#ffeef5;
+}
+
+.summary{
+    margin-top:25px;
+    background:#f8fff8;
+    padding:20px;
+    border-radius:10px;
+    border-left:6px solid #98d998;
+}
+
+.summary p{
+    font-size:17px;
+    margin:8px 0;
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    padding:10px 20px;
+    background:#ffb6c1;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.back:hover{
+    background:#98d998;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Student Result</h1>
+</header>
+
+<div class="container">
+
+<h2>Semester Result</h2>
+
+<table>
+
+<tr>
+<th>Subject</th>
+<th>Marks (100)</th>
+<th>Grade</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Java Programming</td>
+<td>92</td>
+<td>A+</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>Database Management System</td>
+<td>88</td>
+<td>A</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>Computer Networks</td>
+<td>84</td>
+<td>A</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>Operating System</td>
+<td>90</td>
+<td>A+</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>Mathematics</td>
+<td>81</td>
+<td>A</td>
+<td>Pass</td>
+</tr>
+
+</table>
+
+<div class="summary">
+
+<p><strong>Total Marks:</strong> 435 / 500</p>
+<p><strong>Percentage:</strong> 87%</p>
+<p><strong>CGPA:</strong> 9.1</p>
+<p><strong>Result:</strong> ✅ PASS</p>
+
+</div>
+
+<center>
+<a href="dashboard.html" class="back">← Back to Dashboard</a>
+</center>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(rgba(255,255,255,0.75), rgba(240,255,240,0.75)),
+    url("cphoto.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+header{
+    background:#ffb6c1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:70%;
+    margin:40px auto;
+    background:rgba(255,255,255,0.92);
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    margin-bottom:30px;
+}
+
+.profile img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:5px solid #98d998;
+}
+
+.details{
+    flex:1;
+}
+
+.details h2{
+    color:#ff69b4;
+    margin-bottom:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+td:first-child{
+    font-weight:bold;
+    color:#4CAF50;
+    width:35%;
+}
+
+.back{
+    display:inline-block;
+    margin-top:30px;
+    padding:10px 20px;
+    background:#ffb6c1;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.back:hover{
+    background:#98d998;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Student Profile</h1>
+</header>
+
+<div class="container">
+
+<div class="profile">
+
+    <img src="profile.png" alt="Student Photo">
+
+    <div class="details">
+        <h2>Riddhi Thummar</h2>
+        <p>Computer science and Engineering Student</p>
+    </div>
+
+</div>
+
+<table>
+
+<tr>
+<td>Student ID</td>
+<td>24Cs107</td>
+</tr>
+
+<tr>
+<td>Enrollment No.</td>
+<td>107</td>
+</tr>
+
+<tr>
+<td>Department</td>
+<td>Computer science and Engineering</td>
+</tr>
+
+<tr>
+<td>Semester</td>
+<td>3rd Semester</td>
+</tr>
+
+<tr>
+<td>Date of Birth</td>
+<td>27 July 2007</td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>Female</td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td>riddhithummar53@gmail.com</td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td>+91 8128648138</td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td>Surat, Gujarat</td>
+</tr>
+
+<tr>
+<td>Blood Group</td>
+<td>O+</td>
+</tr>
+
+</table>
+
+<center>
+<a href="dashboard.html" class="back">← Back to Dashboard</a>
+</center>
+
+</div>
+
+</body>
+</html>

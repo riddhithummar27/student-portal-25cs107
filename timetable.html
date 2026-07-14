@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Timetable</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(rgba(255,255,255,0.75), rgba(240,255,240,0.75)),
+    url("cphoto.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+header{
+    background:#ffb6c1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    margin:40px auto;
+    background:rgba(255,255,255,0.92);
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    color:#ff69b4;
+    margin-bottom:25px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#98d998;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f8fff8;
+}
+
+tr:hover{
+    background:#ffeef5;
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    padding:10px 20px;
+    background:#ffb6c1;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.back:hover{
+    background:#98d998;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Student Timetable</h1>
+</header>
+
+<div class="container">
+
+<h2>Weekly Class Timetable</h2>
+
+<table>
+
+<tr>
+<th>Time</th>
+<th>Monday</th>
+<th>Tuesday</th>
+<th>Wednesday</th>
+<th>Thursday</th>
+<th>Friday</th>
+</tr>
+
+<tr>
+<td>9:00 - 10:00</td>
+<td>Java</td>
+<td>DBMS</td>
+<td>Java</td>
+<td>CN</td>
+<td>OS</td>
+</tr>
+
+<tr>
+<td>10:00 - 11:00</td>
+<td>CN</td>
+<td>Java</td>
+<td>DBMS</td>
+<td>OS</td>
+<td>Maths</td>
+</tr>
+
+<tr>
+<td>11:00 - 12:00</td>
+<td>Maths</td>
+<td>CN</td>
+<td>OS</td>
+<td>Java Lab</td>
+<td>DBMS</td>
+</tr>
+
+<tr>
+<td>12:00 - 1:00</td>
+<td colspan="5"><strong>Lunch Break</strong></td>
+</tr>
+
+<tr>
+<td>1:00 - 2:00</td>
+<td>DBMS Lab</td>
+<td>Maths</td>
+<td>CN Lab</td>
+<td>DBMS</td>
+<td>Java</td>
+</tr>
+
+<tr>
+<td>2:00 - 3:00</td>
+<td>OS</td>
+<td>Project</td>
+<td>Maths</td>
+<td>Library</td>
+<td>Project</td>
+</tr>
+
+<tr>
+<td>3:00 - 4:00</td>
+<td>Sports</td>
+<td>Seminar</td>
+<td>Library</td>
+<td>Project</td>
+<td>Sports</td>
+</tr>
+
+</table>
+
+<br>
+
+<center>
+<a href="dashboard.html" class="back">← Back to Dashboard</a>
+</center>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portal Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(rgba(255,255,255,0.75),rgba(240,255,240,0.75)),
+    url("cphoto.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.login-box{
+    width:360px;
+    background:rgba(255,255,255,0.92);
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#ff69b4;
+    margin-bottom:10px;
+}
+
+p{
+    color:#4CAF50;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:2px solid #b7e4b7;
+    border-radius:8px;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#ff69b4;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    background:#ffb6c1;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#98d998;
+}
+
+.footer{
+    margin-top:20px;
+    color:#666;
+    font-size:13px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="login-box">
+
+    <h1>Student Portal</h1>
+    <p>welcome to greenk university!</p>
+
+    <form action="dashboard.html" method="get">
+
+        <input type="text" placeholder="Student ID" required>
+
+        <input type="password" placeholder="Password" required>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <div class="footer">
+        © 2026 Student Portal
+    </div>
+
+</div>
+
+</body>
+</html>
