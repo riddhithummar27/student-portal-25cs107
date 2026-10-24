@@ -1,0 +1,603 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>StudentHub Practical Submission - ITUE203</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  body { font-family: 'Calibri', 'Segoe UI', Arial, sans-serif; font-size: 11pt; line-height: 1.4; color: #111; margin: 1in; }
+  h1 { font-size: 20pt; color: #1e3a8a; text-align: center; margin-bottom: 6px; }
+  h2 { font-size: 14pt; color: #1e40af; border-bottom: 2px solid #2563eb; padding-bottom: 4px; margin-top: 24px; page-break-after: avoid; }
+  h3 { font-size: 12pt; color: #1f2937; margin-top: 14px; margin-bottom: 4px; }
+  p { margin: 6px 0; }
+  .cover { text-align: center; padding-top: 60px; padding-bottom: 80px; page-break-after: always; }
+  .cover h1 { font-size: 22pt; margin-top: 20px; font-weight: bold; }
+  .cover h2 { border: none; font-size: 16pt; color: #2563eb; margin: 10px 0; }
+  .cover p { font-size: 12pt; margin: 6px 0; color: #374151; }
+  .cover-box { margin-top: 80px; padding: 20px; border: 2px solid #1e3a8a; display: inline-block; text-align: left; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 10pt; }
+  th, td { border: 1px solid #94a3b8; padding: 6px 10px; text-align: left; }
+  th { background-color: #f1f5f9; color: #0f172a; font-weight: bold; }
+  pre, code { font-family: 'Consolas', 'Courier New', monospace; font-size: 9.5pt; background: #f8fafc; }
+  .code-box { background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #2563eb; padding: 10px; margin: 8px 0; font-family: 'Consolas', monospace; font-size: 9.5pt; white-space: pre-wrap; }
+  .screenshot-placeholder { border: 2px dashed #94a3b8; background: #f8fafc; padding: 25px; text-align: center; color: #64748b; font-weight: bold; margin: 12px 0; }
+  .viva-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 10px 14px; margin: 10px 0; }
+  .viva-q { font-weight: bold; color: #1e40af; }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- 1. COVER PAGE                              -->
+<!-- ========================================== -->
+<div class="cover">
+  <p style="font-size: 14pt; font-weight: bold; color: #1e3a8a;">CHAROTAR UNIVERSITY OF SCIENCE AND TECHNOLOGY (CHARUSAT)</p>
+  <p style="font-size: 13pt; font-weight: bold;">FACULTY OF TECHNOLOGY AND ENGINEERING (FTE)</p>
+  <p style="font-size: 11pt; color: #4b5563;">DEPARTMENT OF INFORMATION TECHNOLOGY / COMPUTER ENGINEERING</p>
+  <hr style="border: 1px solid #1e3a8a; margin: 25px 0;">
+
+  <h1>LABORATORY PRACTICAL JOURNAL</h1>
+  <h2>SUBJECT: WEB DEVELOPMENT FRAMEWORKS (ITUE203)</h2>
+  <p><strong>SEMESTER:</strong> 3RD SEMESTER, B.TECH (2026-27 ODD)</p>
+  <p><strong>COURSE OUTCOMES:</strong> CO1, CO2, CO3, CO4, CO5</p>
+
+  <div style="margin-top: 60px;">
+    <h2 style="font-size: 18pt; color: #1e3a8a;">StudentHub: Unified Campus Web Portal</h2>
+    <p style="font-style: italic;">Consolidated Practical Implementation (Practical 1 to Practical 15)</p>
+  </div>
+
+  <table style="width: 70%; margin: 60px auto 0 auto; border: 2px solid #1e3a8a;">
+    <tr><th colspan="2" style="background:#1e3a8a; color:white; text-align:center; font-size:11pt;">STUDENT DETAILS</th></tr>
+    <tr><td style="width: 40%; font-weight:bold;">Student Name:</td><td>Riddhi Thummar</td></tr>
+    <tr><td style="font-weight:bold;">Student ID:</td><td>25CS107</td></tr>
+    <tr><td style="font-weight:bold;">Branch / Division:</td><td>Computer Engineering / IT</td></tr>
+    <tr><td style="font-weight:bold;">Academic Year:</td><td>2026-2027</td></tr>
+    <tr><td style="font-weight:bold;">GitHub Repository:</td><td>https://github.com/riddhithummar27/student-portal-25cs107</td></tr>
+  </table>
+</div>
+
+<!-- ========================================== -->
+<!-- 2. PRACTICAL SUMMARY INDEX TABLE           -->
+<!-- ========================================== -->
+<h2>Practical Summary Index</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width:5%;">No.</th>
+      <th style="width:40%;">Practical Title</th>
+      <th style="width:25%;">Core Technology</th>
+      <th style="width:10%;">CO</th>
+      <th style="width:10%;">Date</th>
+      <th style="width:10%;">Sign</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Project Initiation, Requirements, Sitemap, Wireframe & GitHub</td><td>Requirements, Wireframes, Git</td><td>CO1</td><td></td><td></td></tr>
+    <tr><td>2</td><td>Semantic HTML5 Pages with Accessibility-Ready Structure</td><td>Semantic HTML5, ARIA, Skip-link</td><td>CO1, CO2</td><td></td><td></td></tr>
+    <tr><td>3</td><td>Responsive UI Design using CSS Grid, Flexbox</td><td>CSS3 Grid, Flexbox, Media Queries</td><td>CO2</td><td></td><td></td></tr>
+    <tr><td>4</td><td>JavaScript DOM Manipulation, Events, UI Interactivity</td><td>DOM, localStorage, Accordion</td><td>CO3, CO4</td><td></td><td></td></tr>
+    <tr><td>5</td><td>Registration Form with Frontend RegEx Validation</td><td>HTML Forms, RegEx, Password Meter</td><td>CO1, CO3</td><td></td><td></td></tr>
+    <tr><td>6</td><td>External JSON Rendering using Fetch API, Search & Filter</td><td>Fetch API, JSON, Array Methods</td><td>CO3, CO4</td><td></td><td></td></tr>
+    <tr><td>7</td><td>PHP Form Processing with Server Validation & CSV/JSON Storage</td><td>PHP POST, Sanitization, CSV/JSON</td><td>CO1, CO5</td><td></td><td></td></tr>
+    <tr><td>8</td><td>MySQL Schema Design, ER Model & Database Connectivity</td><td>MySQL, PDO, Prepared Statements</td><td>CO1, CO5</td><td></td><td></td></tr>
+    <tr><td>9</td><td>Secure User Registration with Hashing & Duplicate Email Check</td><td>password_hash, MySQL Insert</td><td>CO1, CO3, CO5</td><td></td><td></td></tr>
+    <tr><td>10</td><td>Secure Login/Logout with Sessions, RBAC & Inactivity Timeout</td><td>PHP Sessions, password_verify, RBAC</td><td>CO1, CO5</td><td></td><td></td></tr>
+    <tr><td>11</td><td>Student Management CRUD with Search & Department Filter</td><td>MySQL CRUD, CSV Export</td><td>CO1, CO4, CO5</td><td></td><td></td></tr>
+    <tr><td>12</td><td>Event Management CRUD with Poster Upload & File Validation</td><td>File Uploads, MIME, Size Limits</td><td>CO1, CO4, CO5</td><td></td><td></td></tr>
+    <tr><td>13</td><td>PHP JSON API & AJAX/Fetch-Based CRUD without Page Reload</td><td>RESTful API, Asynchronous Fetch</td><td>CO3, CO4, CO5</td><td></td><td></td></tr>
+    <tr><td>14</td><td>Admin Dashboard with Role-Based Access & Audit Logs</td><td>SQL Aggregation, Audit Trail</td><td>CO1, CO4, CO5</td><td></td><td></td></tr>
+    <tr><td>15</td><td>Final Integration, Testing, Deployment & GitHub Submission</td><td>Full Stack Integration, Deployment</td><td>CO2, CO4, CO5</td><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 1                                -->
+<!-- ========================================== -->
+<h2>Practical 1: Project Initiation, Requirement Analysis, Sitemap, Wireframe & GitHub Setup</h2>
+<p><strong>Problem Definition:</strong> Initiate the semester-long StudentHub portal by identifying problem scope, user roles (Admin & Student), key modules, navigation flow, sitemap, wireframes, project folder structure, and GitHub repository.</p>
+
+<h3>1. Key Questions & Theoretical Analysis:</h3>
+<ul>
+  <li><strong>What is a URL and its parts?</strong> Uniform Resource Locator. Parts: Scheme/Protocol (<code>http://</code> or <code>https://</code>), Host/Domain (<code>localhost</code> or <code>charusat.edu.in</code>), Port (<code>:80</code> or <code>:443</code>), Path (<code>/studenthub/login.php</code>), and Query String (<code>?role=student&timeout=1</code>).</li>
+  <li><strong>How does an HTML file get processed in a web browser?</strong> The browser downloads the HTML byte stream, parses tokens, builds the DOM (Document Object Model) tree, processes CSS to build the CSSOM, combines them into a Render Tree, performs layout/reflow, and paints the pixels on the display screen.</li>
+  <li><strong>How is navigation flow managed?</strong> Managed through a shared navigation header (navbar) linking all core views consistently with breadcrumbs and active state highlights.</li>
+  <li><strong>How are GitHub commits maintained?</strong> Incremental commits after completing each practical task using Git branch workflows.</li>
+</ul>
+
+<h3>2. Project Folder Structure:</h3>
+<div class="code-box">studenthub/
+├── index.php                 # Home landing page
+├── login.php / register.php  # Auth & signup modules
+├── student_dashboard.php     # Student portal
+├── admin_dashboard.php       # Admin monitoring
+├── admin_students.php        # Student CRUD & CSV export
+├── admin_events.php          # Event CRUD & poster uploads
+├── ajax_crud.html            # Asynchronous Fetch CRUD
+├── api_students.php          # JSON REST endpoint
+├── audit_logs.php            # Security traceability
+├── db.php                    # PDO & MySQLi connection
+├── style.css                 # Responsive stylesheet
+├── script.js                 # UI interactivity & theme
+└── events.json / students.json # JSON datasets</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: GitHub Repository & Project Folder Structure]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 2                                -->
+<!-- ========================================== -->
+<h2>Practical 2: Semantic HTML5 Pages with Accessibility-Ready Structure</h2>
+<p><strong>Problem Definition:</strong> Develop static HTML5 skeletons for at least 10 StudentHub pages such as Home, About, Register, Login, Dashboard, Events, Profile, Contact, Admin, FAQ, and Feedback using semantic tags and accessibility-ready structure.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>Are semantic tags used properly?</strong> Yes. <code>&lt;header&gt;</code> contains brand logo and navigation, <code>&lt;nav&gt;</code> encapsulates links, <code>&lt;main&gt;</code> contains unique page content, <code>&lt;section&gt;</code> groups related themes, <code>&lt;article&gt;</code> handles standalone cards, and <code>&lt;footer&gt;</code> holds copyright and university links.</li>
+  <li><strong>Are accessibility tags implemented?</strong> Included <code>&lt;a href="#main" class="skip-link"&gt;Skip to main content&lt;/a&gt;</code>, ARIA attributes (<code>aria-label</code>, <code>aria-expanded</code>, <code>role="alert"</code>), and descriptive <code>alt</code> tags for images.</li>
+</ul>
+
+<h3>2. Key Code Snippet (Semantic Navigation & Skip Link):</h3>
+<div class="code-box">&lt;a href="#main" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+&lt;header class="navbar"&gt;
+  &lt;div class="nav-container"&gt;
+    &lt;a href="index.php" class="logo"&gt;Student&lt;span&gt;Hub&lt;/span&gt;&lt;/a&gt;
+    &lt;nav class="nav-links" aria-label="Primary navigation"&gt;
+      &lt;a href="index.php"&gt;Home&lt;/a&gt;
+      &lt;a href="about.html"&gt;About&lt;/a&gt;
+      &lt;a href="dynamic.html"&gt;Events&lt;/a&gt;
+      &lt;a href="faq.html"&gt;FAQ&lt;/a&gt;
+      &lt;a href="login.php"&gt;Login&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Semantic HTML5 Page Structure in Browser / DevTools]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 3                                -->
+<!-- ========================================== -->
+<h2>Practical 3: Responsive UI Design using CSS Grid, Flexbox & Media Queries</h2>
+<p><strong>Problem Definition:</strong> Design responsive layouts for Home, About, Registration, Dashboard, and Events pages using CSS Grid and Flexbox with mobile-first responsiveness.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>How does the layout adapt for mobile, tablet, and desktop screens?</strong> CSS Media Queries (<code>@media (max-width: 768px)</code>) switch navigation menus from inline flex to collapsible hamburger drawers and switch multi-column CSS Grid (<code>repeat(auto-fit, minmax(240px, 1fr))</code>) into stacked single columns on smaller mobile screens.</li>
+  <li><strong>Why use Grid vs Flexbox?</strong> Flexbox is used for 1-dimensional alignment (navbar rows, button bars), while CSS Grid is used for 2-dimensional card grids (stats cards, course links).</li>
+</ul>
+
+<h3>2. Key CSS Code Snippet (style.css):</h3>
+<div class="code-box">/* Responsive Statistics Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+/* Mobile-First Navigation Breakpoint */
+@media (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; width: 100%; }
+  .nav-links.open { display: flex; }
+  .grid-dashboard { grid-template-columns: 1fr; }
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Responsive Views — Mobile, Tablet & Desktop Comparison]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 4                                -->
+<!-- ========================================== -->
+<h2>Practical 4: JavaScript DOM Manipulation, Event Handling & UI Interactivity</h2>
+<p><strong>Problem Definition:</strong> Add dynamic UI components such as collapsible FAQ, modal popups, notification banner, hamburger menu, and light/dark theme switcher using JavaScript and localStorage.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>How are DOM elements selected and manipulated?</strong> Using modern methods: <code>document.getElementById()</code>, <code>document.querySelectorAll()</code>, <code>element.classList.toggle()</code>, and <code>element.addEventListener()</code>.</li>
+  <li><strong>Is localStorage used for persistence?</strong> Yes. User theme preference (<code>'dark'</code> or <code>'light'</code>) is stored in <code>localStorage.setItem("studenthub-theme", theme)</code> so the visual theme is preserved across sessions and page reloads.</li>
+</ul>
+
+<h3>2. Key JavaScript Snippet (script.js):</h3>
+<div class="code-box">function initTheme() {
+  const btn = document.getElementById("themeToggle");
+  const saved = localStorage.getItem("studenthub-theme");
+  if (saved === "dark") document.documentElement.setAttribute("data-theme", "dark");
+  
+  btn?.addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (isDark) {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("studenthub-theme", "light");
+      btn.textContent = "🌙";
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("studenthub-theme", "dark");
+      btn.textContent = "☀️";
+    }
+  });
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Light / Dark Mode Toggle & Collapsible Accordion]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 5                                -->
+<!-- ========================================== -->
+<h2>Practical 5: Registration Form with Frontend Validation & User-Friendly Error Handling</h2>
+<p><strong>Problem Definition:</strong> Create a student registration form with HTML5 input types and JavaScript Regular Expression validation for name, email, mobile number, password, course, semester, and terms acceptance.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>Which RegEx patterns are used?</strong>
+    <ul>
+      <li>Email: <code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code></li>
+      <li>10-Digit Mobile: <code>/^[0-9]{10}$/</code></li>
+      <li>Password Strength: Checked dynamically for uppercase letters, digits, and special characters.</li>
+    </ul>
+  </li>
+  <li><strong>How are UX errors displayed?</strong> Real-time inline feedback spans below each input field turn red when invalid, preventing submission until corrected.</li>
+</ul>
+
+<h3>2. Key Code Snippet (register.php JS Validation):</h3>
+<div class="code-box">passInput.addEventListener('input', function() {
+  const val = passInput.value;
+  let score = 0;
+  if (val.length >= 8) score++;
+  if (/[A-Z]/.test(val)) score++;
+  if (/[0-9]/.test(val)) score++;
+  if (/[^A-Za-z0-9]/.test(val)) score++;
+
+  meterBar.style.width = (score * 25) + '%';
+  meterBar.style.backgroundColor = score &lt;= 1 ? '#ef4444' : (score === 2 ? '#f59e0b' : '#10b981');
+});</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Registration Form with RegEx Validation & Password Meter]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 6                                -->
+<!-- ========================================== -->
+<h2>Practical 6: Rendering External JSON Data using Fetch API, Search & Filter</h2>
+<p><strong>Problem Definition:</strong> Display campus event lists from an external JSON file (<code>events.json</code> with 15+ records) using the Fetch API, implementing dynamic rendering, search, category filter, sorting, and pagination.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>How is JSON fetched and parsed?</strong> Using <code>fetch('events.json').then(r =&gt; r.json())</code> with async/await and error-handling try/catch blocks.</li>
+  <li><strong>Which array methods are used?</strong> <code>Array.filter()</code> for name/venue search and category filtering; <code>Array.sort()</code> for chronological date ordering; <code>Array.slice(start, start + perPage)</code> for pagination.</li>
+</ul>
+
+<h3>2. Key JavaScript Snippet (dynamic.html):</h3>
+<div class="code-box">async function loadEvents() {
+  try {
+    const res = await fetch('events.json');
+    allEvents = await res.json();
+    renderEvents();
+  } catch (err) {
+    document.getElementById('eventStatus').textContent = 'Error loading events.json';
+  }
+}
+
+function getFilteredEvents() {
+  const q = searchInput.value.toLowerCase();
+  const cat = categoryFilter.value;
+  return allEvents.filter(e =&gt; 
+    (e.name.toLowerCase().includes(q) || e.venue.toLowerCase().includes(q)) &&
+    (cat === '' || e.category === cat)
+  );
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Dynamic JSON Events Rendering with Search & Category Filter]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 7                                -->
+<!-- ========================================== -->
+<h2>Practical 7: PHP Form Processing with Server-Side Validation & CSV/JSON Storage</h2>
+<p><strong>Problem Definition:</strong> Process submitted registration/feedback data using PHP POST method, validate and sanitize inputs on the server side, and store records in CSV and JSON formats.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>Why is server-side validation mandatory?</strong> Client-side validation can be disabled or bypassed; server-side sanitization (<code>filter_input</code>, <code>htmlspecialchars</code>) ensures malicious data never harms the application.</li>
+  <li><strong>How is safe file writing handled?</strong> Using <code>fopen($file, 'a')</code>, <code>fputcsv()</code> with automatic headers, and <code>file_put_contents($jsonFile, json_encode($data, JSON_PRETTY_PRINT))</code>.</li>
+</ul>
+
+<h3>2. Key PHP Snippet (feedback.php):</h3>
+<div class="code-box">$name = trim(filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS));
+$email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
+$rating = filter_input(INPUT_POST, "rating", FILTER_VALIDATE_INT);
+$comments = trim(filter_input(INPUT_POST, "comments", FILTER_SANITIZE_SPECIAL_CHARS));
+
+if ($name && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  // 1. Store in CSV
+  $handle = fopen("feedback.csv", "a");
+  fputcsv($handle, [date("Y-m-d H:i:s"), $name, $email, $rating, $comments]);
+  fclose($handle);
+
+  // 2. Store in JSON
+  $records = file_exists("feedback.json") ? json_decode(file_get_contents("feedback.json"), true) : [];
+  $records[] = ["timestamp" =&gt; date("Y-m-d H:i:s"), "name" =&gt; $name, "rating" =&gt; $rating, "comments" =&gt; $comments];
+  file_put_contents("feedback.json", json_encode($records, JSON_PRETTY_PRINT));
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Feedback Form Submission & Generated CSV / JSON File]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 8                                -->
+<!-- ========================================== -->
+<h2>Practical 8: MySQL Schema Design, ER Model & Database Connectivity</h2>
+<p><strong>Problem Definition:</strong> Design normalized relational tables for StudentHub (<code>users</code>, <code>students</code>, <code>events</code>, <code>registrations</code>, <code>audit_logs</code>) and create a centralized PHP database connection file using PDO and MySQLi.</p>
+
+<h3>1. Database Schema Table Overview:</h3>
+<table>
+  <thead>
+    <tr><th>Table Name</th><th>Primary Key</th><th>Foreign Keys / Indexes</th><th>Key Columns</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>users</code></td><td>user_id</td><td>UNIQUE(email)</td><td>name, email, password, role ('admin','student')</td></tr>
+    <tr><td><code>students</code></td><td>student_id</td><td>UNIQUE(email)</td><td>name, email, mobile, department, semester</td></tr>
+    <tr><td><code>events</code></td><td>event_id</td><td>INDEX(event_date)</td><td>event_name, event_date, venue, poster_path</td></tr>
+    <tr><td><code>registrations</code></td><td>registration_id</td><td>FK(student_id), FK(event_id)</td><td>student_id, event_id, registration_date</td></tr>
+    <tr><td><code>audit_logs</code></td><td>log_id</td><td>INDEX(user_id)</td><td>user_id, action, details, ip_address, created_at</td></tr>
+  </tbody>
+</table>
+
+<h3>2. Database Connection Script (db.php):</h3>
+<div class="code-box">&lt;?php
+$host = "localhost";
+$dbname = "studenthub";
+$username = "root";
+$password = "";
+
+try {
+  $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+  $pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $pdo-&gt;setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+  die("Database connection failed: " . $e-&gt;getMessage());
+}
+?&gt;</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: phpMyAdmin Schema & Successful Database Connection]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 9                                -->
+<!-- ========================================== -->
+<h2>Practical 9: Secure User Registration with Password Hashing & Duplicate Check</h2>
+<p><strong>Problem Definition:</strong> Implement secure user registration inserting user details into MySQL. Validate inputs on frontend and backend, check for duplicate emails, and hash passwords using <code>password_hash()</code>.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>Why use <code>password_hash()</code> instead of md5/sha1?</strong> MD5 and SHA-1 are fast and vulnerable to rainbow tables. <code>password_hash(..., PASSWORD_DEFAULT)</code> uses bcrypt, which includes automated salt generation and adjustable cryptographic cost factor.</li>
+  <li><strong>How is duplicate check handled?</strong> <code>SELECT user_id FROM users WHERE email = ?</code> is executed prior to inserting records.</li>
+</ul>
+
+<h3>2. Key PHP Snippet (register.php):</h3>
+<div class="code-box">$check = $pdo-&gt;prepare("SELECT user_id FROM users WHERE email = ?");
+$check-&gt;execute([$email]);
+
+if ($check-&gt;fetch()) {
+  $message = "This email is already registered. Please login.";
+} else {
+  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+  $stmt = $pdo-&gt;prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'student')");
+  $stmt-&gt;execute([$name, $email, $hashedPassword]);
+  
+  // Also insert corresponding student profile
+  $pdo-&gt;prepare("INSERT INTO students (name, email, mobile, department, semester) VALUES (?, ?, ?, ?, ?)")
+      -&gt;execute([$name, $email, $mobile, $course, $semester]);
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Registration Success & Hashed Password in phpMyAdmin]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 10                               -->
+<!-- ========================================== -->
+<h2>Practical 10: Secure Login/Logout with Sessions, RBAC & Inactivity Timeout</h2>
+<p><strong>Problem Definition:</strong> Develop secure login and logout using PHP sessions. Verify passwords with <code>password_verify()</code>, regenerate session IDs, restrict unauthorized dashboard access with RBAC, and implement a 15-minute inactivity session timeout.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>Why call <code>session_regenerate_id(true)</code>?</strong> Prevents Session Fixation attacks by assigning a new session token upon authentication.</li>
+  <li><strong>How is session timeout implemented?</strong> In <code>auth.php</code>, <code>time() - $_SESSION['last_activity'] &gt; 900</code> terminates the session and redirects to <code>login.php?timeout=1</code>.</li>
+</ul>
+
+<h3>2. Key PHP Snippet (login.php & auth.php):</h3>
+<div class="code-box">if ($user && password_verify($password, $user["password"])) {
+  session_regenerate_id(true);
+  $_SESSION["user_id"] = $user["user_id"];
+  $_SESSION["role"] = $user["role"];
+  $_SESSION["last_activity"] = time();
+
+  if ($user["role"] === "admin") {
+    header("Location: admin_dashboard.php");
+  } else {
+    header("Location: student_dashboard.php");
+  }
+  exit;
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Successful Login & Inactivity Timeout Notice]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 11                               -->
+<!-- ========================================== -->
+<h2>Practical 11: Student Management CRUD with Search, Filter & CSV Export</h2>
+<p><strong>Problem Definition:</strong> Build a student management module enabling admins to add, view, edit, search, filter, and delete students with prepared statements and confirmation dialogs.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>How are SQL statements protected?</strong> Parameterized queries (<code>UPDATE students SET name=? WHERE student_id=?</code>) eliminate SQL injection vulnerabilities.</li>
+  <li><strong>How is CSV export handled?</strong> Emits CSV headers (<code>header("Content-Type: text/csv")</code>) and writes records with <code>fputcsv()</code> to <code>php://output</code>.</li>
+</ul>
+
+<h3>2. Key PHP Snippet (admin_students.php):</h3>
+<div class="code-box">// Export to CSV Extension
+if (isset($_GET["export"]) && $_GET["export"] === "csv") {
+  header("Content-Type: text/csv");
+  header("Content-Disposition: attachment; filename=students_export.csv");
+  $out = fopen("php://output", "w");
+  fputcsv($out, ["ID", "Name", "Email", "Mobile", "Department", "Semester"]);
+  $stmt = $pdo-&gt;query("SELECT student_id, name, email, mobile, department, semester FROM students");
+  while ($r = $stmt-&gt;fetch(PDO::FETCH_ASSOC)) fputcsv($out, $r);
+  fclose($out);
+  exit;
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Student CRUD Table, Search Bar & CSV Download]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 12                               -->
+<!-- ========================================== -->
+<h2>Practical 12: Event Management CRUD with Poster Upload & File Validation</h2>
+<p><strong>Problem Definition:</strong> Build event management allowing admins to create, edit, search, and delete events with validated event poster image uploads (MIME type check, file size &lt; 2MB, random unique filenames).</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>How is file upload security enforced?</strong>
+    <ul>
+      <li>MIME type check using <code>finfo(FILEINFO_MIME_TYPE)</code>: allows only <code>image/jpeg</code>, <code>image/png</code>, <code>image/webp</code>.</li>
+      <li>File size checked: <code>$file['size'] &lt;= 2 * 1024 * 1024</code> (maximum 2MB).</li>
+      <li>Name sanitization: <code>bin2hex(random_bytes(16)) . '.' . $extension</code> prevents directory traversal.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2. Key PHP Snippet (admin_events.php):</h3>
+<div class="code-box">function posterUpload(array $f, string $dir, string $url): ?string {
+  if (!isset($f['error']) || $f['error'] === UPLOAD_ERR_NO_FILE) return null;
+  if ($f['size'] &gt; 2 * 1024 * 1024) throw new RuntimeException('Max 2MB allowed.');
+  $mime = (new finfo(FILEINFO_MIME_TYPE))-&gt;file($f['tmp_name']);
+  $types = ['image/jpeg'=&gt;'jpg', 'image/png'=&gt;'png', 'image/webp'=&gt;'webp'];
+  if (!isset($types[$mime])) throw new RuntimeException('Invalid image format.');
+  $name = bin2hex(random_bytes(16)) . '.' . $types[$mime];
+  move_uploaded_file($f['tmp_name'], $dir . $name);
+  return $url . $name;
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Event Poster Upload & Event Management Table]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 13                               -->
+<!-- ========================================== -->
+<h2>Practical 13: PHP JSON API & AJAX/Fetch-Based CRUD without Page Reload</h2>
+<p><strong>Problem Definition:</strong> Create PHP RESTful JSON API endpoints for students (<code>api_students.php</code>) and consume them using Fetch API in <code>ajax_crud.html</code> to perform list, search, add, update, and delete asynchronously with zero page reloads.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>How do endpoints return JSON?</strong> <code>header("Content-Type: application/json")</code> and <code>echo json_encode($response)</code>.</li>
+  <li><strong>How is search debounced?</strong> A 300ms <code>clearTimeout</code> prevents excessive HTTP requests while typing.</li>
+</ul>
+
+<h3>2. Key Code Snippet (ajax_crud.html):</h3>
+<div class="code-box">// Asynchronous Fetch API POST
+const res = await fetch('api_students.php', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name, email, mobile, department, semester })
+});
+const result = await res.json();
+if (res.ok) {
+  showToast(result.message);
+  fetchStudents(); // Refresh table asynchronously
+}</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: AJAX CRUD Table & Toast Notification without Page Reload]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 14                               -->
+<!-- ========================================== -->
+<h2>Practical 14: Admin Dashboard with Role-Based Access Control & Audit Logs</h2>
+<p><strong>Problem Definition:</strong> Develop an admin dashboard displaying user statistics, student counts, and recent activities using SQL aggregation, role-based menus, and an audit trail viewer.</p>
+
+<h3>1. Key Questions & Analysis:</h3>
+<ul>
+  <li><strong>How are statistics computed?</strong> Using SQL aggregation: <code>SELECT COUNT(*) FROM students</code>, <code>SELECT COUNT(*) FROM events</code>, <code>SELECT COUNT(*) FROM audit_logs</code>.</li>
+  <li><strong>What gets logged in audit_logs?</strong> User ID, action (e.g. <code>user_login</code>, <code>student_create</code>, <code>event_deleted</code>), activity details, client IP address, and timestamp.</li>
+</ul>
+
+<h3>2. Key PHP Snippet (admin_dashboard.php):</h3>
+<div class="code-box">$studentCount = (int)$pdo-&gt;query("SELECT COUNT(*) FROM students")-&gt;fetchColumn();
+$eventCount = (int)$pdo-&gt;query("SELECT COUNT(*) FROM events")-&gt;fetchColumn();
+$userCount = (int)$pdo-&gt;query("SELECT COUNT(*) FROM users")-&gt;fetchColumn();
+$logCount = (int)$pdo-&gt;query("SELECT COUNT(*) FROM audit_logs")-&gt;fetchColumn();</div>
+
+<div class="screenshot-placeholder">[INSERT SCREENSHOT: Admin Dashboard KPI Cards & Audit Trail Log Viewer]</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PRACTICAL 15                               -->
+<!-- ========================================== -->
+<h2>Practical 15: Final Integration, Testing, Local Deployment & Submission</h2>
+<p><strong>Problem Definition:</strong> Consolidate all frontend and backend modules into the full StudentHub portal. Verify integration with diagnostic scripts, run security checks, document deployment steps, and push to GitHub.</p>
+
+<h3>1. Integration Checklist:</h3>
+<table>
+  <thead>
+    <tr><th>Verification Step</th><th>Status</th><th>Verification File / Command</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Database Connection</td><td>PASS</td><td><code>test_connection.php</code></td></tr>
+    <tr><td>Table Schema (5 Tables)</td><td>PASS</td><td><code>setup_database.php</code></td></tr>
+    <tr><td>Form RegEx & Security Hashing</td><td>PASS</td><td><code>register.php</code></td></tr>
+    <tr><td>Role-Based Access Control (RBAC)</td><td>PASS</td><td><code>login.php</code> & <code>auth.php</code></td></tr>
+    <tr><td>Student CRUD & CSV Export</td><td>PASS</td><td><code>admin_students.php</code></td></tr>
+    <tr><td>Event Poster File Upload</td><td>PASS</td><td><code>admin_events.php</code></td></tr>
+    <tr><td>Asynchronous Fetch JSON API</td><td>PASS</td><td><code>ajax_crud.html</code> & <code>api_students.php</code></td></tr>
+    <tr><td>System Health Diagnostic</td><td>PASS</td><td><code>integration_check.php</code></td></tr>
+  </tbody>
+</table>
+
+<h3>2. University Lab Viva Preparation (Questions & Answers):</h3>
+<div class="viva-box">
+  <p class="viva-q">Q1: What is the purpose of session_regenerate_id(true)?</p>
+  <p><strong>Ans:</strong> It prevents Session Fixation attacks by destroying the old session ID and generating a new cryptographic session ID immediately after a user logs in.</p>
+</div>
+<div class="viva-box">
+  <p class="viva-q">Q2: How does Fetch API differ from traditional XMLHttpRequest (XHR)?</p>
+  <p><strong>Ans:</strong> Fetch API returns Promises, providing cleaner async/await syntax, better error handling, and avoiding callback hell.</p>
+</div>
+<div class="viva-box">
+  <p class="viva-q">Q3: Why should passwords never be stored using md5()?</p>
+  <p><strong>Ans:</strong> MD5 has known collision vulnerabilities and can be cracked in seconds via precomputed rainbow tables. <code>password_hash()</code> uses bcrypt with salt and computational work factors.</p>
+</div>
+<div class="viva-box">
+  <p class="viva-q">Q4: What is the difference between client-side and server-side validation?</p>
+  <p><strong>Ans:</strong> Client-side validation gives immediate feedback to users in the browser but can be easily bypassed. Server-side validation is mandatory for security before executing database queries.</p>
+</div>
+
+<hr style="margin-top: 30px;">
+<p style="text-align: center; color: #64748b; font-size: 10pt;">
+  <strong>StudentHub Portal</strong> &bull; Department of Information Technology / Computer Engineering &bull; CHARUSAT FTE
+</p>
+
+</body>
+</html>
