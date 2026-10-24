@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | StudentHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="dashboard.html" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="result.html">Result</a>
+        <a href="payment.html">Payment</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="course.html">Courses</a>
+        <a href="notices.html">Notices</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="notifBanner" class="banner">
+      <span>📢 New notice posted: Mid-semester exam schedule is now available.</span>
+      <button id="bannerClose" aria-label="Dismiss notification">&times;</button>
+    </div>
+
+    <div class="page-header">
+      <h1>Welcome back, Student</h1>
+      <p>Here's a quick snapshot of your academic status.</p>
+    </div>
+
+    <section class="stats-grid" aria-label="Quick stats">
+      <div class="stat-card">
+        <div class="label">Attendance</div>
+        <div class="value">87%</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Last Result</div>
+        <div class="value">SGPA 8.4</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Fees Due</div>
+        <div class="value">₹6,500</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Next Class</div>
+        <div class="value">10:00 AM</div>
+      </div>
+    </section>
+
+    <h2 class="section-title">Quick Links</h2>
+    <section class="card-grid" aria-label="Quick links">
+      <a class="link-card" href="attendance.html">
+        <div class="icon">🗓️</div>
+        <h3>Attendance</h3>
+        <p>View subject-wise attendance percentage.</p>
+      </a>
+      <a class="link-card" href="result.html">
+        <div class="icon">📊</div>
+        <h3>Result</h3>
+        <p>Check semester marks and grades.</p>
+      </a>
+      <a class="link-card" href="payment.html">
+        <div class="icon">💳</div>
+        <h3>Payment</h3>
+        <p>View and pay pending fees.</p>
+      </a>
+      <a class="link-card" href="timetable.html">
+        <div class="icon">📅</div>
+        <h3>Timetable</h3>
+        <p>Weekly class schedule.</p>
+      </a>
+      <a class="link-card" href="course.html">
+        <div class="icon">📚</div>
+        <h3>Courses</h3>
+        <p>Enrolled subjects this semester.</p>
+      </a>
+      <a class="link-card" href="notices.html">
+        <div class="icon">📌</div>
+        <h3>Notices</h3>
+        <p>Latest announcements from college.</p>
+      </a>
+      <a class="link-card" href="profile.html">
+        <div class="icon">👤</div>
+        <h3>Profile</h3>
+        <p>View and edit your details.</p>
+      </a>
+      <a class="link-card" href="contact.html">
+        <div class="icon">✉️</div>
+        <h3>Contact</h3>
+        <p>Reach the college administration.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal. Built for academic practical submission.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

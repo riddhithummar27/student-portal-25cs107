@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses | StudentHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="dashboard.html" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="result.html">Result</a>
+        <a href="payment.html">Payment</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="course.html">Courses</a>
+        <a href="notices.html">Notices</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-header">
+      <h1>Enrolled Courses</h1>
+      <p>Semester 4 — Computer Engineering.</p>
+    </div>
+
+    <section class="card-grid" aria-label="Enrolled courses">
+      <div class="course-card">
+        <h3>Data Structures</h3>
+        <p>Arrays, linked lists, trees, graphs, and algorithm design.</p>
+        <div class="meta">CE301 · 4 Credits · Prof. R. Sharma</div>
+      </div>
+      <div class="course-card">
+        <h3>Web Technology</h3>
+        <p>HTML5, CSS3, JavaScript, and responsive web development.</p>
+        <div class="meta">CE302 · 3 Credits · Prof. A. Mehta</div>
+      </div>
+      <div class="course-card">
+        <h3>Computer Networks</h3>
+        <p>Network models, protocols, routing, and transmission media.</p>
+        <div class="meta">CE303 · 4 Credits · Prof. K. Patel</div>
+      </div>
+      <div class="course-card">
+        <h3>Database Management</h3>
+        <p>Relational databases, SQL, normalization, and transactions.</p>
+        <div class="meta">CE304 · 4 Credits · Prof. S. Desai</div>
+      </div>
+      <div class="course-card">
+        <h3>Digital Electronics</h3>
+        <p>Logic gates, combinational and sequential circuits.</p>
+        <div class="meta">CE305 · 3 Credits · Prof. N. Joshi</div>
+      </div>
+      <div class="course-card">
+        <h3>Engineering Mathematics</h3>
+        <p>Differential equations, transforms, and numerical methods.</p>
+        <div class="meta">MA301 · 3 Credits · Prof. P. Rao</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal. Built for academic practical submission.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

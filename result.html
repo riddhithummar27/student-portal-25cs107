@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Result | StudentHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="dashboard.html" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="result.html">Result</a>
+        <a href="payment.html">Payment</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="course.html">Courses</a>
+        <a href="notices.html">Notices</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-header">
+      <h1>Semester Result</h1>
+      <p>Semester 4 — Internal, external, and grade breakdown.</p>
+    </div>
+
+    <section class="stats-grid" aria-label="Result summary">
+      <div class="stat-card">
+        <div class="label">SGPA</div>
+        <div class="value">8.4</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">CGPA</div>
+        <div class="value">8.2</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Total Credits</div>
+        <div class="value">24</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Result Status</div>
+        <div class="value">Pass</div>
+      </div>
+    </section>
+
+    <div class="table-wrapper">
+      <table>
+        <caption class="sr-only">Semester result</caption>
+        <thead>
+          <tr>
+            <th scope="col">Subject</th>
+            <th scope="col">Internal (30)</th>
+            <th scope="col">External (70)</th>
+            <th scope="col">Total (100)</th>
+            <th scope="col">Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Data Structures</td><td>27</td><td>61</td><td>88</td><td>A</td></tr>
+          <tr><td>Web Technology</td><td>28</td><td>58</td><td>86</td><td>A</td></tr>
+          <tr><td>Computer Networks</td><td>24</td><td>52</td><td>76</td><td>B+</td></tr>
+          <tr><td>Database Management</td><td>26</td><td>60</td><td>86</td><td>A</td></tr>
+          <tr><td>Digital Electronics</td><td>25</td><td>55</td><td>80</td><td>A-</td></tr>
+          <tr><td>Engineering Mathematics</td><td>29</td><td>64</td><td>93</td><td>A+</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal. Built for academic practical submission.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

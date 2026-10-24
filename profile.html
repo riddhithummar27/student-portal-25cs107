@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | StudentHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="dashboard.html" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="result.html">Result</a>
+        <a href="payment.html">Payment</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="course.html">Courses</a>
+        <a href="notices.html">Notices</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-header">
+      <h1>My Profile</h1>
+      <p>View and update your personal details.</p>
+    </div>
+
+    <div class="profile-header">
+      <div class="avatar">SD</div>
+      <div>
+        <h2>Student Name</h2>
+        <p>Roll No: 21CE045 &nbsp;|&nbsp; B.Tech Computer Engineering &nbsp;|&nbsp; Semester 4</p>
+      </div>
+    </div>
+
+    <div id="profileSuccess" class="form-success" role="alert">Profile updated successfully.</div>
+
+    <form id="profileForm">
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" value="Student Name" />
+        </div>
+        <div class="form-group">
+          <label for="rollNo">Roll Number</label>
+          <input type="text" id="rollNo" name="rollNo" value="21CE045" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" value="student@charusat.edu.in" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" value="+91 90000 00000" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3">Changa, Anand, Gujarat</textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal. Built for academic practical submission.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

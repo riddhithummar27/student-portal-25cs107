@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notices | StudentHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="dashboard.html" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="result.html">Result</a>
+        <a href="payment.html">Payment</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="course.html">Courses</a>
+        <a href="notices.html">Notices</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-header">
+      <h1>Notices</h1>
+      <p>Latest announcements. Click a notice to expand it.</p>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Mid-Semester Exam Schedule Released <span class="date">10 Aug 2026</span>
+        </button>
+        <div class="accordion-body">
+          <p>The mid-semester examination timetable for all branches has been published on the notice board and the college website. Students are advised to check their seat numbers and report 15 minutes before the scheduled time.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Fee Payment Deadline Extended <span class="date">05 Aug 2026</span>
+        </button>
+        <div class="accordion-body">
+          <p>The last date for hostel and exam fee payment has been extended to 30 August 2026. A late fee will apply after this date. Pay through the Payment section of this portal.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Technical Fest Registrations Open <span class="date">01 Aug 2026</span>
+        </button>
+        <div class="accordion-body">
+          <p>Registrations for the annual technical fest are now open. Students interested in coding, robotics, or design events can register through the student council office before 20 August 2026.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Library Timing Update <span class="date">28 Jul 2026</span>
+        </button>
+        <div class="accordion-body">
+          <p>The central library will remain open until 8:00 PM on weekdays during the examination period to support extra study hours.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal. Built for academic practical submission.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

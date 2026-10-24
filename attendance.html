@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance | StudentHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="dashboard.html" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="result.html">Result</a>
+        <a href="payment.html">Payment</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="course.html">Courses</a>
+        <a href="notices.html">Notices</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-header">
+      <h1>Attendance</h1>
+      <p>Subject-wise attendance for the current semester.</p>
+    </div>
+
+    <section class="stats-grid" aria-label="Attendance summary">
+      <div class="stat-card">
+        <div class="label">Overall Attendance</div>
+        <div class="value">87%</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Classes Held</div>
+        <div class="value">142</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Classes Attended</div>
+        <div class="value">124</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Minimum Required</div>
+        <div class="value">75%</div>
+      </div>
+    </section>
+
+    <div class="table-wrapper">
+      <table>
+        <caption class="sr-only">Subject-wise attendance</caption>
+        <thead>
+          <tr>
+            <th scope="col">Subject</th>
+            <th scope="col">Classes Held</th>
+            <th scope="col">Attended</th>
+            <th scope="col">Percentage</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data Structures</td>
+            <td>28</td>
+            <td>26</td>
+            <td>93%</td>
+            <td><span class="status-pill status-good">Good</span></td>
+          </tr>
+          <tr>
+            <td>Web Technology</td>
+            <td>24</td>
+            <td>21</td>
+            <td>88%</td>
+            <td><span class="status-pill status-good">Good</span></td>
+          </tr>
+          <tr>
+            <td>Computer Networks</td>
+            <td>26</td>
+            <td>18</td>
+            <td>69%</td>
+            <td><span class="status-pill status-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>Database Management</td>
+            <td>22</td>
+            <td>19</td>
+            <td>86%</td>
+            <td><span class="status-pill status-good">Good</span></td>
+          </tr>
+          <tr>
+            <td>Digital Electronics</td>
+            <td>20</td>
+            <td>18</td>
+            <td>90%</td>
+            <td><span class="status-pill status-good">Good</span></td>
+          </tr>
+          <tr>
+            <td>Engineering Mathematics</td>
+            <td>22</td>
+            <td>22</td>
+            <td>100%</td>
+            <td><span class="status-pill status-good">Good</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal. Built for academic practical submission.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

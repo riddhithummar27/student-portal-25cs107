@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+<style>
+  :root{
+    --bg:#eef1f4;
+    --card:#ffffff;
+    --ink:#1c2430;
+    --muted:#5c6773;
+    --line:#d7dde3;
+    --accent:#2d5f6f;
+    --accent-dark:#1f4552;
+    --error:#c0392b;
+    --ok:#1e8e5a;
+    --weak:#c0392b;
+    --fair:#d98c1f;
+    --good:#2d8f5f;
+    --strong:#1f7a45;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    padding:32px 16px;
+  }
+  .wrap{max-width:640px;margin:0 auto;}
+  h1{font-size:1.5rem;margin:0 0 4px;}
+  p.sub{color:var(--muted);margin:0 0 24px;font-size:.92rem;}
+  form{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:28px;
+  }
+  fieldset{border:none;padding:0;margin:0 0 20px;}
+  legend{font-weight:600;font-size:1rem;margin-bottom:10px;padding:0;}
+  .field{margin-bottom:18px;}
+  label{display:block;font-weight:600;font-size:.88rem;margin-bottom:6px;}
+  .hint{font-weight:400;color:var(--muted);font-size:.78rem;}
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  select{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    font-size:.95rem;
+    background:#fbfcfd;
+    color:var(--ink);
+  }
+  input:focus, select:focus, button:focus, input[type="checkbox"]:focus{
+    outline:3px solid #9fc4d6;
+    outline-offset:1px;
+    border-color:var(--accent);
+  }
+  input[aria-invalid="true"], select[aria-invalid="true"]{
+    border-color:var(--error);
+    background:#fdf3f2;
+  }
+  input[aria-invalid="false"]{
+    border-color:var(--ok);
+  }
+  .error-msg{
+    display:block;
+    min-height:16px;
+    color:var(--error);
+    font-size:.78rem;
+    margin-top:5px;
+  }
+  .radio-row, .gender-options{display:flex;gap:20px;flex-wrap:wrap;}
+  .radio-row label, .gender-options label{
+    display:flex;align-items:center;gap:6px;font-weight:400;font-size:.9rem;
+  }
+  .checkbox-row{display:flex;align-items:flex-start;gap:8px;}
+  .checkbox-row label{font-weight:400;font-size:.88rem;}
+  .strength-meter{
+    height:6px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden;
+  }
+  .strength-meter-fill{height:100%;width:0%;transition:width .2s ease, background .2s ease;}
+  .strength-label{font-size:.78rem;margin-top:4px;color:var(--muted);}
+  .captcha-box{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;
+  }
+  #captchaCanvas{border:1px solid var(--line);border-radius:6px;background:#f4f6f8;}
+  .btn-secondary{
+    border:1px solid var(--line);background:#fff;color:var(--ink);
+    padding:7px 12px;border-radius:6px;font-size:.82rem;cursor:pointer;
+  }
+  .btn-secondary:hover{background:#f1f3f5;}
+  button[type="submit"]{
+    width:100%;padding:12px;background:var(--accent);color:#fff;border:none;
+    border-radius:6px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:6px;
+  }
+  button[type="submit"]:hover{background:var(--accent-dark);}
+  #formStatus{
+    margin-top:14px;padding:10px 12px;border-radius:6px;font-size:.88rem;display:none;
+  }
+  #formStatus.success{display:block;background:#e7f6ee;color:var(--ok);border:1px solid #b9e3cb;}
+  #formStatus.failure{display:block;background:#fdecea;color:var(--error);border:1px solid #f3c1bb;}
+  .req{color:var(--error);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Student Registration</h1>
+  <p class="sub">Fields marked <span class="req">*</span> are required. Errors appear next to each field as you type.</p>
+
+  <form id="regForm" novalidate>
+
+    <div class="field">
+      <label for="name">Full Name <span class="req">*</span></label>
+      <input type="text" id="name" name="name" autocomplete="name"
+             aria-describedby="nameError" aria-required="true">
+      <span class="error-msg" id="nameError" role="alert"></span>
+    </div>
+
+    <div class="field">
+      <label for="email">Email Address <span class="req">*</span></label>
+      <input type="email" id="email" name="email" autocomplete="email"
+             aria-describedby="emailError" aria-required="true">
+      <span class="error-msg" id="emailError" role="alert"></span>
+    </div>
+
+    <div class="field">
+      <label for="mobile">Mobile Number <span class="req">*</span>
+        <span class="hint">10 digits, starts with 6-9</span></label>
+      <input type="tel" id="mobile" name="mobile" autocomplete="tel" maxlength="10"
+             aria-describedby="mobileError" aria-required="true">
+      <span class="error-msg" id="mobileError" role="alert"></span>
+    </div>
+
+    <div class="field">
+      <label for="password">Password <span class="req">*</span>
+        <span class="hint">Min 8 chars, upper, lower, digit, special char</span></label>
+      <input type="password" id="password" name="password" autocomplete="new-password"
+             aria-describedby="passwordError passwordStrengthText" aria-required="true">
+      <div class="strength-meter" aria-hidden="true">
+        <div class="strength-meter-fill" id="strengthFill"></div>
+      </div>
+      <span class="strength-label" id="passwordStrengthText">Strength: —</span>
+      <span class="error-msg" id="passwordError" role="alert"></span>
+    </div>
+
+    <div class="field">
+      <label for="confirmPassword">Confirm Password <span class="req">*</span></label>
+      <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password"
+             aria-describedby="confirmPasswordError" aria-required="true">
+      <span class="error-msg" id="confirmPasswordError" role="alert"></span>
+    </div>
+
+    <div class="field">
+      <label for="course">Course <span class="req">*</span></label>
+      <select id="course" name="course" aria-describedby="courseError" aria-required="true">
+        <option value="">-- Select Course --</option>
+        <option value="CE">Computer Engineering</option>
+        <option value="IT">Information Technology</option>
+        <option value="EC">Electronics & Communication</option>
+        <option value="ME">Mechanical Engineering</option>
+        <option value="CV">Civil Engineering</option>
+      </select>
+      <span class="error-msg" id="courseError" role="alert"></span>
+    </div>
+
+    <div class="field">
+      <label for="year">Year <span class="req">*</span></label>
+      <select id="year" name="year" aria-describedby="yearError" aria-required="true">
+        <option value="">-- Select Year --</option>
+        <option value="1">1st Year</option>
+        <option value="2">2nd Year</option>
+        <option value="3">3rd Year</option>
+        <option value="4">4th Year</option>
+      </select>
+      <span class="error-msg" id="yearError" role="alert"></span>
+    </div>
+
+    <fieldset class="field">
+      <legend>Gender <span class="req">*</span></legend>
+      <div class="gender-options" role="radiogroup" aria-describedby="genderError">
+        <label><input type="radio" name="gender" value="Female" id="genderFemale"> Female</label>
+        <label><input type="radio" name="gender" value="Male" id="genderMale"> Male</label>
+        <label><input type="radio" name="gender" value="Other" id="genderOther"> Other</label>
+      </div>
+      <span class="error-msg" id="genderError" role="alert"></span>
+    </fieldset>
+
+    <div class="field">
+      <label for="captchaInput">Security Check <span class="req">*</span></label>
+      <div class="captcha-box">
+        <canvas id="captchaCanvas" width="150" height="50" role="img"
+                aria-label="CAPTCHA image, click refresh if unreadable"></canvas>
+        <button type="button" class="btn-secondary" id="refreshCaptcha">Refresh</button>
+      </div>
+      <input type="text" id="captchaInput" name="captchaInput" autocomplete="off"
+             placeholder="Enter the code shown above"
+             aria-describedby="captchaError" aria-required="true">
+      <span class="error-msg" id="captchaError" role="alert"></span>
+    </div>
+
+    <div class="field checkbox-row">
+      <input type="checkbox" id="terms" name="terms" aria-describedby="termsError" aria-required="true">
+      <label for="terms">I accept the terms and conditions <span class="req">*</span></label>
+    </div>
+    <span class="error-msg" id="termsError" role="alert"></span>
+
+    <button type="submit">Register</button>
+    <div id="formStatus" role="status"></div>
+  </form>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- Regex patterns ----------
+  var PATTERNS = {
+    name: /^[A-Za-z][A-Za-z\s]{2,49}$/,                 // letters/spaces, 3-50 chars
+    email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    mobile: /^[6-9]\d{9}$/,                             // 10 digits, starts 6-9
+    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/
+  };
+
+  var form = document.getElementById("regForm");
+  var statusBox = document.getElementById("formStatus");
+
+  function setError(inputEl, errorEl, message) {
+    errorEl.textContent = message;
+    inputEl.setAttribute("aria-invalid", message ? "true" : "false");
+    return message === "";
+  }
+
+  // ---------- Field validators ----------
+  function validateName() {
+    var el = document.getElementById("name");
+    var err = document.getElementById("nameError");
+    var v = el.value.trim();
+    if (v === "") return setError(el, err, "Name is required.");
+    if (!PATTERNS.name.test(v)) return setError(el, err, "Use letters and spaces only (3-50 chars).");
+    return setError(el, err, "");
+  }
+
+  function validateEmail() {
+    var el = document.getElementById("email");
+    var err = document.getElementById("emailError");
+    var v = el.value.trim();
+    if (v === "") return setError(el, err, "Email is required.");
+    if (!PATTERNS.email.test(v)) return setError(el, err, "Enter a valid email address.");
+    return setError(el, err, "");
+  }
+
+  function validateMobile() {
+    var el = document.getElementById("mobile");
+    var err = document.getElementById("mobileError");
+    var v = el.value.trim();
+    if (v === "") return setError(el, err, "Mobile number is required.");
+    if (!PATTERNS.mobile.test(v)) return setError(el, err, "Enter a valid 10-digit mobile number.");
+    return setError(el, err, "");
+  }
+
+  function passwordScore(v) {
+    var score = 0;
+    if (v.length >= 8) score++;
+    if (/[a-z]/.test(v)) score++;
+    if (/[A-Z]/.test(v)) score++;
+    if (/\d/.test(v)) score++;
+    if (/[!@#$%^&*]/.test(v)) score++;
+    return score; // 0-5
+  }
+
+  function updateStrengthMeter() {
+    var v = document.getElementById("password").value;
+    var fill = document.getElementById("strengthFill");
+    var text = document.getElementById("passwordStrengthText");
+    var score = passwordScore(v);
+    var pct = (score / 5) * 100;
+    var label = "—", color = "var(--line)";
+    if (v.length === 0) { label = "—"; pct = 0; }
+    else if (score <= 2) { label = "Weak"; color = "var(--weak)"; }
+    else if (score === 3) { label = "Fair"; color = "var(--fair)"; }
+    else if (score === 4) { label = "Good"; color = "var(--good)"; }
+    else { label = "Strong"; color = "var(--strong)"; }
+    fill.style.width = pct + "%";
+    fill.style.background = color;
+    text.textContent = "Strength: " + label;
+  }
+
+  function validatePassword() {
+    var el = document.getElementById("password");
+    var err = document.getElementById("passwordError");
+    var v = el.value;
+    updateStrengthMeter();
+    if (v === "") return setError(el, err, "Password is required.");
+    if (!PATTERNS.password.test(v)) {
+      return setError(el, err, "Min 8 chars with uppercase, lowercase, digit & special char.");
+    }
+    return setError(el, err, "");
+  }
+
+  function validateConfirmPassword() {
+    var el = document.getElementById("confirmPassword");
+    var err = document.getElementById("confirmPasswordError");
+    var v = el.value;
+    var pass = document.getElementById("password").value;
+    if (v === "") return setError(el, err, "Please confirm your password.");
+    if (v !== pass) return setError(el, err, "Passwords do not match.");
+    return setError(el, err, "");
+  }
+
+  function validateCourse() {
+    var el = document.getElementById("course");
+    var err = document.getElementById("courseError");
+    if (el.value === "") return setError(el, err, "Please select a course.");
+    return setError(el, err, "");
+  }
+
+  function validateYear() {
+    var el = document.getElementById("year");
+    var err = document.getElementById("yearError");
+    if (el.value === "") return setError(el, err, "Please select a year.");
+    return setError(el, err, "");
+  }
+
+  function validateGender() {
+    var err = document.getElementById("genderError");
+    var checked = document.querySelector('input[name="gender"]:checked');
+    if (!checked) { err.textContent = "Please select a gender."; return false; }
+    err.textContent = "";
+    return true;
+  }
+
+  function validateTerms() {
+    var el = document.getElementById("terms");
+    var err = document.getElementById("termsError");
+    if (!el.checked) { err.textContent = "You must accept the terms to continue."; return false; }
+    err.textContent = "";
+    return true;
+  }
+
+  // ---------- CAPTCHA (Canvas) ----------
+  var canvas = document.getElementById("captchaCanvas");
+  var ctx = canvas.getContext("2d");
+  var currentCaptcha = "";
+
+  function generateCaptchaText() {
+    var chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"; // no 0/O/1/I/L
+    var text = "";
+    for (var i = 0; i < 6; i++) {
+      text += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return text;
+  }
+
+  function drawCaptcha() {
+    currentCaptcha = generateCaptchaText();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#f4f6f8";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // noise lines
+    for (var i = 0; i < 5; i++) {
+      ctx.strokeStyle = "rgba(45,95,111," + (0.15 + Math.random() * 0.2) + ")";
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.stroke();
+    }
+
+    // characters
+    var spacing = canvas.width / (currentCaptcha.length + 1);
+    for (var j = 0; j < currentCaptcha.length; j++) {
+      ctx.save();
+      var x = spacing * (j + 1);
+      var y = canvas.height / 2 + (Math.random() * 10 - 5);
+      ctx.translate(x, y);
+      ctx.rotate((Math.random() * 0.5 - 0.25));
+      ctx.font = "bold 22px Arial";
+      ctx.fillStyle = "#1c2430";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(currentCaptcha[j], 0, 0);
+      ctx.restore();
+    }
+
+    // noise dots
+    for (var k = 0; k < 30; k++) {
+      ctx.fillStyle = "rgba(28,36,48,0.2)";
+      ctx.beginPath();
+      ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, 1, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function validateCaptcha() {
+    var el = document.getElementById("captchaInput");
+    var err = document.getElementById("captchaError");
+    var v = el.value.trim().toUpperCase();
+    if (v === "") return setError(el, err, "Please enter the code shown.");
+    if (v !== currentCaptcha) return setError(el, err, "Code does not match. Try again.");
+    return setError(el, err, "");
+  }
+
+  document.getElementById("refreshCaptcha").addEventListener("click", function () {
+    drawCaptcha();
+    document.getElementById("captchaInput").value = "";
+    document.getElementById("captchaError").textContent = "";
+  });
+
+  drawCaptcha();
+
+  // ---------- Real-time validation (keyup / change) ----------
+  document.getElementById("name").addEventListener("keyup", validateName);
+  document.getElementById("email").addEventListener("keyup", validateEmail);
+  document.getElementById("mobile").addEventListener("keyup", validateMobile);
+  document.getElementById("password").addEventListener("keyup", function () {
+    validatePassword();
+    if (document.getElementById("confirmPassword").value !== "") validateConfirmPassword();
+  });
+  document.getElementById("confirmPassword").addEventListener("keyup", validateConfirmPassword);
+  document.getElementById("course").addEventListener("change", validateCourse);
+  document.getElementById("year").addEventListener("change", validateYear);
+  document.querySelectorAll('input[name="gender"]').forEach(function (r) {
+    r.addEventListener("change", validateGender);
+  });
+  document.getElementById("terms").addEventListener("change", validateTerms);
+  document.getElementById("captchaInput").addEventListener("keyup", validateCaptcha);
+
+  // ---------- Submit ----------
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var checks = [
+      validateName(), validateEmail(), validateMobile(),
+      validatePassword(), validateConfirmPassword(),
+      validateCourse(), validateYear(), validateGender(),
+      validateTerms(), validateCaptcha()
+    ];
+    var allValid = checks.every(function (ok) { return ok; });
+
+    statusBox.className = "";
+    if (!allValid) {
+      statusBox.classList.add("failure");
+      statusBox.textContent = "Please fix the highlighted errors and try again.";
+      var firstInvalid = form.querySelector('[aria-invalid="true"]');
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    statusBox.classList.add("success");
+    statusBox.textContent = "Registration successful! (Demo only — no data was sent to a server.)";
+    // In a real app: collect form data with FormData(form) and send via fetch()
+  });
+
+})();
+</script>
+</body>
+</html>

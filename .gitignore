@@ -1,0 +1,22 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+config.local.php
+secrets/
+
+# Dependencies and logs
+node_modules/
+vendor/
+*.log
+
+# Local backups
+*.bak
+*.backup
+
+# Uploaded files
+uploads/event_posters/*
+
+# Private database exports
+database_backup.sql
+studenthub_full_backup.sql
