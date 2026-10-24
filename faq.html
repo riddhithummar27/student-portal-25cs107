@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frequently Asked Questions | StudentHub</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .faq-item {
+      background: var(--card-bg, #ffffff);
+      margin-bottom: 14px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 16px 20px;
+      background: none;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 20px 16px 20px;
+      color: #475569;
+      line-height: 1.6;
+      border-top: 1px solid #f1f5f9;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(180deg);
+    }
+    .faq-toggle-icon {
+      transition: transform 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.php" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="index.php">Home</a>
+        <a href="about.html">About</a>
+        <a href="dynamic.html">Events & Activities</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.php">Login</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container" style="max-width: 900px; margin: 30px auto; padding: 0 16px;">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="font-size: 0.85rem; color: #64748b; margin-bottom: 18px;">
+      <a href="index.php" style="color: #2563eb;">Home</a> &gt; <span>FAQ</span>
+    </nav>
+
+    <div class="page-header">
+      <h1 style="color: #1e3a8a;">Frequently Asked Questions</h1>
+      <p style="color: #64748b;">Find quick answers regarding StudentHub credentials, attendance, fees, and campus events.</p>
+    </div>
+
+    <!-- Practical 4: Interactive Collapsible Accordion Component -->
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I create a new student account?</span>
+          <span class="faq-toggle-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <p>Click on the <strong>Register</strong> button in the navigation bar or visit <a href="register.php">register.php</a>. Enter your full name, student email, 10-digit mobile number, department, semester, and create a password with at least 8 characters.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What are the default test credentials for viva examination?</span>
+          <span class="faq-toggle-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <p>For testing and evaluation:<br>
+          • <strong>Administrator:</strong> <code>admin@studenthub.com</code> / Password: <code>admin123</code><br>
+          • <strong>Student:</strong> <code>student@studenthub.com</code> / Password: <code>student123</code></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How is my attendance calculated in the portal?</span>
+          <span class="faq-toggle-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <p>Attendance is updated weekly by course faculty. You must maintain at least 80% overall attendance as per CHARUSAT university regulations to appear in end-semester examinations.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I participate in campus hackathons or sports events?</span>
+          <span class="faq-toggle-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <p>Visit the <a href="dynamic.html">Campus Events</a> page. You can search, filter by category (Technical, Cultural, Sports), and click register on any open event poster.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Does the portal remember my dark or light theme preference?</span>
+          <span class="faq-toggle-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! StudentHub uses HTML5 <code>localStorage</code> to store your selected theme so your choice persists every time you revisit any page.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal &bull; CHARUSAT FTE</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Practical 4: Accordion Toggle Interaction
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

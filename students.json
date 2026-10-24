@@ -1,0 +1,17 @@
+[
+  { "id": 1, "name": "Riddhi Thummar", "email": "riddhi@studenthub.com", "department": "Information Technology", "semester": 3, "gpa": 8.8 },
+  { "id": 2, "name": "Aarav Patel", "email": "aarav.patel@studenthub.com", "department": "Computer Engineering", "semester": 3, "gpa": 8.5 },
+  { "id": 3, "name": "Diya Shah", "email": "diya.shah@studenthub.com", "department": "Information Technology", "semester": 5, "gpa": 9.1 },
+  { "id": 4, "name": "Kavya Joshi", "email": "kavya.joshi@studenthub.com", "department": "Computer Science", "semester": 3, "gpa": 8.2 },
+  { "id": 5, "name": "Rohan Mehta", "email": "rohan.mehta@studenthub.com", "department": "Electrical Engineering", "semester": 5, "gpa": 7.9 },
+  { "id": 6, "name": "Ananya Sharma", "email": "ananya.s@studenthub.com", "department": "Information Technology", "semester": 3, "gpa": 9.0 },
+  { "id": 7, "name": "Dev Parekh", "email": "dev.parekh@studenthub.com", "department": "Computer Engineering", "semester": 5, "gpa": 8.4 },
+  { "id": 8, "name": "Pooja Desai", "email": "pooja.desai@studenthub.com", "department": "Information Technology", "semester": 7, "gpa": 9.3 },
+  { "id": 9, "name": "Siddharth Verma", "email": "sid.verma@studenthub.com", "department": "Mechanical Engineering", "semester": 3, "gpa": 7.8 },
+  { "id": 10, "name": "Tanvi Trivedi", "email": "tanvi.t@studenthub.com", "department": "Computer Science", "semester": 5, "gpa": 8.7 },
+  { "id": 11, "name": "Aditya Rawal", "email": "aditya.r@studenthub.com", "department": "Civil Engineering", "semester": 3, "gpa": 7.5 },
+  { "id": 12, "name": "Khushi Pandya", "email": "khushi.p@studenthub.com", "department": "Information Technology", "semester": 3, "gpa": 8.9 },
+  { "id": 13, "name": "Harshil Soni", "email": "harshil.s@studenthub.com", "department": "Computer Engineering", "semester": 5, "gpa": 8.6 },
+  { "id": 14, "name": "Ishita Dave", "email": "ishita.d@studenthub.com", "department": "Information Technology", "semester": 7, "gpa": 9.4 },
+  { "id": 15, "name": "Meet Vora", "email": "meet.vora@studenthub.com", "department": "Computer Engineering", "semester": 3, "gpa": 8.1 }
+]

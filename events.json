@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Technical Hackathon",
+    "category": "Technical",
+    "date": "2026-11-05",
+    "venue": "CSPIT Auditorium",
+    "description": "24-hour continuous coding hackathon addressing smart campus challenges."
+  },
+  {
+    "id": 2,
+    "name": "Cultural Fest - Spandan",
+    "category": "Cultural",
+    "date": "2026-11-10",
+    "venue": "University Ground",
+    "description": "Annual university extravaganza celebrating art, music, dance and theatre."
+  },
+  {
+    "id": 3,
+    "name": "Web Development Workshop",
+    "category": "Technical",
+    "date": "2026-11-15",
+    "venue": "Computer Lab 301",
+    "description": "Hands-on masterclass building full-stack web applications with PHP and JS."
+  },
+  {
+    "id": 4,
+    "name": "Photography Competition",
+    "category": "Cultural",
+    "date": "2026-11-18",
+    "venue": "Main Campus Garden",
+    "description": "Capture the best scenic spots and candid campus moments across CHARUSAT."
+  },
+  {
+    "id": 5,
+    "name": "AI and Machine Learning Seminar",
+    "category": "Technical",
+    "date": "2026-11-20",
+    "venue": "CSPIT Seminar Hall",
+    "description": "Industry keynote covering modern LLMs, neural networks and agentic AI."
+  },
+  {
+    "id": 6,
+    "name": "Sports Day Athletic Meet",
+    "category": "Sports",
+    "date": "2026-11-22",
+    "venue": "University Ground",
+    "description": "Track and field track events including 100m sprint, relay, and long jump."
+  },
+  {
+    "id": 7,
+    "name": "Speed Coding Competition",
+    "category": "Technical",
+    "date": "2026-11-25",
+    "venue": "Computer Lab 204",
+    "description": "Algorithmic problem-solving contest with competitive programming rounds."
+  },
+  {
+    "id": 8,
+    "name": "Dance Competition",
+    "category": "Cultural",
+    "date": "2026-11-28",
+    "venue": "University Auditorium",
+    "description": "Solo, duet, and group folk and western dance battles."
+  },
+  {
+    "id": 9,
+    "name": "Robotics Exhibition",
+    "category": "Technical",
+    "date": "2026-12-02",
+    "venue": "Innovation Center",
+    "description": "Showcase of obstacle-avoiding bot, robowars, and drone technology."
+  },
+  {
+    "id": 10,
+    "name": "Box Cricket Tournament",
+    "category": "Sports",
+    "date": "2026-12-05",
+    "venue": "University Ground",
+    "description": "Fast-paced short-over cricket tournament among engineering departments."
+  },
+  {
+    "id": 11,
+    "name": "UI/UX Design Workshop",
+    "category": "Technical",
+    "date": "2026-12-08",
+    "venue": "Design Lab",
+    "description": "Design user flows, wireframes and high-fidelity prototypes in Figma."
+  },
+  {
+    "id": 12,
+    "name": "Music Night",
+    "category": "Cultural",
+    "date": "2026-12-10",
+    "venue": "Open Air Theatre",
+    "description": "Live musical orchestra and vocal performances under the stars."
+  },
+  {
+    "id": 13,
+    "name": "Project Exhibition",
+    "category": "Technical",
+    "date": "2026-12-12",
+    "venue": "CSPIT Auditorium",
+    "description": "Display of working capstone engineering projects and IoT demonstrations."
+  },
+  {
+    "id": 14,
+    "name": "Badminton Tournament",
+    "category": "Sports",
+    "date": "2026-12-15",
+    "venue": "Indoor Sports Complex",
+    "description": "Inter-department singles and doubles badminton championship."
+  },
+  {
+    "id": 15,
+    "name": "Entrepreneurship Seminar",
+    "category": "Business",
+    "date": "2026-12-18",
+    "venue": "Seminar Hall",
+    "description": "Startup pitch mentoring, venture capital insights, and case studies."
+  }
+]

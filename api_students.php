@@ -1,13 +1,17 @@
 <?php
+// ==============================================================================
+// Practical 13: PHP JSON API for AJAX/Fetch-Based CRUD without Page Reload
+// ==============================================================================
 require_once __DIR__ . "/auth.php";
 require_once __DIR__ . "/db.php";
 
 header("Content-Type: application/json; charset=utf-8");
 header("Cache-Control: no-store");
 
+// Admin or authorized user check
 if (($_SESSION["role"] ?? "") !== "admin") {
     http_response_code(403);
-    echo json_encode(["error" => "Admin access required."]);
+    echo json_encode(["status" => "error", "error" => "Administrator authorization required."]);
     exit;
 }
 
@@ -17,7 +21,17 @@ function respond(int $status, array $payload): void {
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "GET") {
+$method = $_SERVER["REQUEST_METHOD"];
+
+// Check method override if needed
+if ($method === "POST" && isset($_POST["_method"])) {
+    $method = strtoupper($_POST["_method"]);
+}
+
+// -------------------------------------------------------------
+// 1. GET: Fetch / Search students list
+// -------------------------------------------------------------
+if ($method === "GET") {
     $q = trim($_GET["q"] ?? "");
     $sql = "SELECT student_id, name, email, mobile, department, semester FROM students";
     $params = [];
@@ -26,37 +40,117 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         $term = "%" . $q . "%";
         $params = [$term, $term, $term];
     }
-    $sql .= " ORDER BY student_id DESC LIMIT 200";
+    $sql .= " ORDER BY student_id DESC LIMIT 100";
     $stmt = $pdo->prepare($sql);
     $stmt->execute($params);
-    respond(200, ["data" => $stmt->fetchAll()]);
+    respond(200, [
+        "status" => "success",
+        "count" => $stmt->rowCount(),
+        "data" => $stmt->fetchAll(PDO::FETCH_ASSOC)
+    ]);
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+// -------------------------------------------------------------
+// 2. POST: Create new student record
+// -------------------------------------------------------------
+if ($method === "POST") {
     $raw = file_get_contents("php://input");
     $data = json_decode($raw, true);
     if (!is_array($data)) {
-        respond(400, ["error" => "Send a valid JSON object."]);
+        // Fallback to standard $_POST
+        $data = $_POST;
     }
+
     $name = trim((string)($data["name"] ?? ""));
     $email = trim((string)($data["email"] ?? ""));
     $mobile = trim((string)($data["mobile"] ?? ""));
     $department = trim((string)($data["department"] ?? ""));
     $semester = filter_var($data["semester"] ?? null, FILTER_VALIDATE_INT);
 
-    if ($name === "" || strlen($name) > 100 || !filter_var($email, FILTER_VALIDATE_EMAIL) ||
-        strlen($email) > 150 || ($semester !== null && $semester !== false && ($semester < 1 || $semester > 12))) {
-        respond(422, ["error" => "Invalid name, email, or semester."]);
+    if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        respond(422, ["status" => "error", "error" => "Please provide a valid name and email address."]);
     }
+
     try {
         $stmt = $pdo->prepare("INSERT INTO students (name, email, mobile, department, semester) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$name, $email, $mobile, $department, $semester ?: null]);
-        respond(201, ["message" => "Student created.", "student_id" => (int)$pdo->lastInsertId()]);
+        $stmt->execute([$name, $email, $mobile, $department, $semester ?: 1]);
+        $newId = (int)$pdo->lastInsertId();
+
+        // Audit log
+        try {
+            $pdo->prepare("INSERT INTO audit_logs (user_id, action, details, ip_address) VALUES (?, ?, ?, ?)")
+                ->execute([$_SESSION["user_id"] ?? null, "api_student_create", "API created student #$newId", $_SERVER["REMOTE_ADDR"] ?? '127.0.0.1']);
+        } catch (Exception $e) {}
+
+        respond(201, [
+            "status" => "success",
+            "message" => "Student created successfully via Fetch API.",
+            "student_id" => $newId
+        ]);
     } catch (PDOException $e) {
-        error_log("StudentHub API create error: " . $e->getMessage());
-        respond(409, ["error" => "Could not create student. Check duplicate email and database constraints."]);
+        respond(409, ["status" => "error", "error" => "Email already exists or database constraint failed."]);
     }
 }
 
-header("Allow: GET, POST");
-respond(405, ["error" => "Method not allowed."]);
+// -------------------------------------------------------------
+// 3. PUT: Update existing student record
+// -------------------------------------------------------------
+if ($method === "PUT") {
+    $raw = file_get_contents("php://input");
+    $data = json_decode($raw, true);
+
+    $id = filter_var($data["student_id"] ?? null, FILTER_VALIDATE_INT);
+    $name = trim((string)($data["name"] ?? ""));
+    $email = trim((string)($data["email"] ?? ""));
+    $mobile = trim((string)($data["mobile"] ?? ""));
+    $department = trim((string)($data["department"] ?? ""));
+    $semester = filter_var($data["semester"] ?? null, FILTER_VALIDATE_INT);
+
+    if (!$id || empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        respond(422, ["status" => "error", "error" => "Valid Student ID, name, and email are required."]);
+    }
+
+    try {
+        $stmt = $pdo->prepare("UPDATE students SET name=?, email=?, mobile=?, department=?, semester=? WHERE student_id=?");
+        $stmt->execute([$name, $email, $mobile, $department, $semester ?: 1, $id]);
+
+        respond(200, [
+            "status" => "success",
+            "message" => "Student #$id updated successfully."
+        ]);
+    } catch (PDOException $e) {
+        respond(409, ["status" => "error", "error" => "Update failed: " . $e->getMessage()]);
+    }
+}
+
+// -------------------------------------------------------------
+// 4. DELETE: Delete student record
+// -------------------------------------------------------------
+if ($method === "DELETE") {
+    $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+    if (!$id) {
+        $raw = file_get_contents("php://input");
+        $data = json_decode($raw, true);
+        $id = filter_var($data["student_id"] ?? null, FILTER_VALIDATE_INT);
+    }
+
+    if (!$id) {
+        respond(422, ["status" => "error", "error" => "Valid Student ID required for deletion."]);
+    }
+
+    try {
+        $pdo->prepare("DELETE FROM registrations WHERE student_id = ?")->execute([$id]);
+        $stmt = $pdo->prepare("DELETE FROM students WHERE student_id = ?");
+        $stmt->execute([$id]);
+
+        respond(200, [
+            "status" => "success",
+            "message" => "Student #$id deleted successfully via API."
+        ]);
+    } catch (PDOException $e) {
+        respond(500, ["status" => "error", "error" => "Deletion error: " . $e->getMessage()]);
+    }
+}
+
+header("Allow: GET, POST, PUT, DELETE");
+respond(405, ["status" => "error", "error" => "HTTP Method Not Allowed."]);

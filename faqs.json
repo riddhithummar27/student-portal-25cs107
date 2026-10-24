@@ -1,0 +1,17 @@
+[
+  { "id": 1, "category": "Registration", "question": "How do I register on StudentHub?", "answer": "Go to register.php, enter your details with a valid email and 8+ char password." },
+  { "id": 2, "category": "Login", "question": "What if I forget my password?", "answer": "Contact the student helpdesk or college administration to reset your account credentials." },
+  { "id": 3, "category": "Attendance", "question": "What is the minimum required attendance?", "answer": "A minimum of 80% attendance in lectures and laboratory sessions is required." },
+  { "id": 4, "category": "Examination", "question": "When are mid-semester exams held?", "answer": "Mid-semester exams are conducted halfway through the semester, as listed in the academic calendar." },
+  { "id": 5, "category": "Fees", "question": "How can I pay semester fees online?", "answer": "Navigate to the Payment tab on your dashboard and select your preferred payment mode." },
+  { "id": 6, "category": "Events", "question": "How do I register for cultural and technical events?", "answer": "Browse upcoming events on dynamic.html or admin_events.php and submit the registration form." },
+  { "id": 7, "category": "Library", "question": "How many books can a student borrow at a time?", "answer": "Undergraduate students may borrow up to 4 books for a period of 14 days." },
+  { "id": 8, "category": "Timetable", "question": "Where can I view my weekly schedule?", "answer": "Visit timetable.html through your student dashboard to see the latest routine." },
+  { "id": 9, "category": "Courses", "question": "Can I choose elective subjects through the portal?", "answer": "Yes, elective selection opens at the start of each semester under the Courses tab." },
+  { "id": 10, "category": "Hostel", "question": "How do I apply for hostel accommodation?", "answer": "Hostel application forms are available in the college administrative office." },
+  { "id": 11, "category": "Results", "question": "How is SGPA calculated?", "answer": "SGPA is calculated by dividing total grade points earned by the total credits of the semester." },
+  { "id": 12, "category": "Feedback", "question": "Where can I provide feedback about campus facilities?", "answer": "Visit feedback.php to submit your suggestions and ratings." },
+  { "id": 13, "category": "Security", "question": "Does StudentHub support session timeouts?", "answer": "Yes, sessions automatically log out after 15 minutes of inactivity for security." },
+  { "id": 14, "category": "Sports", "question": "Are sports facilities available on weekends?", "answer": "Yes, the indoor sports complex and university grounds are open on Saturdays and Sundays." },
+  { "id": 15, "category": "Admin", "question": "Who has administrator access in StudentHub?", "answer": "Only authorized faculty and administrative staff with 'admin' role privileges." }
+]

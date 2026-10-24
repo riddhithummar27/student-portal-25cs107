@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | StudentHub Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.php" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="index.php">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="dynamic.html">Events & Activities</a>
+        <a href="faq.html">FAQ</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.php">Login</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container" style="max-width: 900px; margin: 30px auto; padding: 0 16px;">
+    <!-- Breadcrumb Navigation (Practical 2 Intermediate Extension) -->
+    <nav aria-label="Breadcrumb" style="font-size: 0.85rem; color: #64748b; margin-bottom: 18px;">
+      <a href="index.php" style="color: #2563eb;">Home</a> &gt; <span>About</span>
+    </nav>
+
+    <div class="page-header">
+      <h1 style="color: #1e3a8a;">About StudentHub</h1>
+      <p style="color: #64748b;">A modern, unified campus management system built for CHARUSAT students and faculty.</p>
+    </div>
+
+    <section style="background: var(--card-bg, #ffffff); padding: 28px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 24px;">
+      <h2>Our Mission</h2>
+      <p style="line-height: 1.6; color: #475569;">
+        StudentHub is created under the <strong>Web Development Frameworks (ITUE203)</strong> curriculum at the Faculty of Technology and Engineering (FTE), CHARUSAT.
+        The portal simplifies academic administration by providing intuitive tools for attendance tracking, course registration, exam marks evaluation, fee processing, and campus event engagement.
+      </p>
+
+      <h2 style="margin-top: 24px;">Core Capabilities</h2>
+      <ul style="line-height: 1.8; color: #475569; padding-left: 20px;">
+        <li><strong>Semantic & Accessible:</strong> Built with HTML5 semantic elements (header, nav, main, article, footer) adhering to WCAG accessibility guidelines.</li>
+        <li><strong>Responsive Design:</strong> Clean responsive CSS Grid and Flexbox layouts suitable for mobile phones, tablets, and desktop computers.</li>
+        <li><strong>Dynamic Frontend Interactivity:</strong> JavaScript-powered interactive FAQs, modal popups, carousels, and persistent dark/light mode.</li>
+        <li><strong>Robust Backend Services:</strong> PHP session handling, MySQL relational database management, prepared statements, and bcrypt password security.</li>
+        <li><strong>Role-Based Access Control:</strong> Strict separation of administrator capabilities and student portal views.</li>
+      </ul>
+    </section>
+
+    <section style="background: var(--card-bg, #ffffff); padding: 28px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      <h2>Academic Information</h2>
+      <p style="color: #475569; line-height: 1.6;">
+        <strong>Institution:</strong> Charotar University of Science and Technology (CHARUSAT)<br>
+        <strong>Faculty:</strong> Faculty of Technology and Engineering (FTE)<br>
+        <strong>Subject:</strong> Web Development Frameworks (ITUE203)<br>
+        <strong>Semester:</strong> 3rd Semester, Academic Year 2026-27<br>
+        <strong>Practical:</strong> Practical 15 (Final Integration & Deployment)
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal &bull; CHARUSAT FTE</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
