@@ -200,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <a href="index.php">Home</a>
         <a href="dynamic.html">Events & Interactivity</a>
         <a href="login.php">Login</a>
-        <a href="register.php" class="active">Register</a>
+        <a href="register.php" class="btn btn-primary active" style="color:white; padding: 6px 14px;">Sign Up</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
@@ -214,9 +214,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   <main id="main" class="container" style="padding: 20px 16px;">
     <div class="form-container">
-      <h2 style="margin-top: 0; color: #1e3a8a;">Student Registration</h2>
+      <h2 style="margin-top: 0; color: #1e3a8a;">Student Registration (Sign Up)</h2>
       <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 24px;">
-        Fill out this form to create your StudentHub portal account.
+        Fill out this form to sign up and create your StudentHub portal account.
       </p>
 
       <?php if (!empty($message)): ?>
@@ -307,9 +307,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </button>
       </form>
 
-      <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #64748b;">
-        Already registered? <a href="login.php" style="color: #2563eb; font-weight: 600;">Sign in here</a>
-      </p>
+      <div style="margin-top: 24px; padding: 14px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; text-align: center;">
+        <span style="color: #1e40af; font-weight: 500;">Already registered with an account?</span><br>
+        <a href="login.php" style="color: #2563eb; font-weight: bold; font-size: 1.05rem; text-decoration: underline; display: inline-block; margin-top: 4px;">
+          👉 Click here to Log In
+        </a>
+      </div>
     </div>
   </main>
 

@@ -9,37 +9,69 @@
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
 
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.php" class="logo">Student<span>Hub</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="index.php">Home</a>
+        <a href="dynamic.html">Events</a>
+        <a href="login.php" class="active">Login</a>
+        <a href="register.php" class="btn btn-primary" style="color: white; padding: 6px 14px;">Sign Up</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
   <main id="main" class="auth-wrap">
     <div class="auth-card">
       <span class="logo">Student<span>Hub</span></span>
       <p class="tagline">Sign in to access your student portal</p>
 
-      <div id="loginError" class="form-error" role="alert"></div>
-
-      <form id="loginForm" novalidate>
+      <!-- Practical 10: Submits to PHP authentication backend -->
+      <form id="loginForm" method="POST" action="login.php">
         <div class="form-group">
-          <label for="username">Username or Email</label>
-          <input type="text" id="username" name="username" autocomplete="username" />
+          <label for="email">Username or Email</label>
+          <input type="email" id="email" name="email" required autocomplete="username" placeholder="e.g. student@studenthub.com" />
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" autocomplete="current-password" />
+          <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Enter password" />
         </div>
 
-        <div class="checkbox-row">
-          <input type="checkbox" id="remember" name="remember" />
-          <label for="remember">Remember me</label>
+        <div class="checkbox-row" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px;">
+          <label style="display:flex; align-items:center; gap:6px; font-size:0.9rem; cursor:pointer;">
+            <input type="checkbox" id="remember" name="remember" /> Remember me
+          </label>
+          <a href="contact.html" style="font-size:0.85rem; color:#2563eb;">Help?</a>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
       </form>
 
-      <p class="auth-foot">
-        Trouble signing in? <a href="contact.html">Contact support</a>
+      <div style="margin-top: 20px; padding: 12px; background: #f8fafc; border-radius: 8px; font-size: 0.85rem; text-align: center; border: 1px dashed #cbd5e1;">
+        <strong>Don't have an account yet?</strong><br>
+        <a href="register.php" style="color: #2563eb; font-weight: bold; text-decoration: underline; font-size: 0.95rem;">
+          Click here to Sign Up / Register
+        </a>
+      </div>
+
+      <p class="auth-foot" style="text-align: center; margin-top: 16px;">
+        Default Student: <code>student@studenthub.com</code> / <code>student123</code><br>
+        Default Admin: <code>admin@studenthub.com</code> / <code>admin123</code>
       </p>
     </div>
   </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 StudentHub Portal &bull; CHARUSAT FTE</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

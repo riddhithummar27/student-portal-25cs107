@@ -118,7 +118,7 @@ try {
           <a href="logout.php" style="color: #dc2626;">Logout</a>
         <?php else: ?>
           <a href="login.php">Login</a>
-          <a href="register.php" class="btn btn-primary" style="color:white; padding: 6px 14px;">Register</a>
+          <a href="register.php" class="btn btn-primary" style="color:white; padding: 6px 14px;">Sign Up</a>
         <?php endif; ?>
       </nav>
       <div class="nav-actions">
@@ -141,7 +141,7 @@ try {
       <div class="hero-buttons">
         <?php if (!isset($_SESSION["user_id"])): ?>
           <a href="login.php" class="hero-btn hero-btn-primary">Student / Staff Login</a>
-          <a href="register.php" class="hero-btn hero-btn-outline">Create Account</a>
+          <a href="register.php" class="hero-btn hero-btn-outline">Sign Up / Create Account</a>
         <?php else: ?>
           <a href="<?= ($_SESSION["role"] ?? '') === 'admin' ? 'admin_dashboard.php' : 'student_dashboard.php' ?>" class="hero-btn hero-btn-primary">
             Go to Your Dashboard &rarr;

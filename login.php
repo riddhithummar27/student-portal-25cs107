@@ -165,7 +165,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <a href="index.php">Home</a>
         <a href="dynamic.html">Events & Interactivity</a>
         <a href="login.php" class="active">Login</a>
-        <a href="register.php">Register</a>
+        <a href="register.php" class="btn btn-primary" style="color:white; padding: 6px 14px;">Sign Up</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
@@ -220,9 +220,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         • Student: <code>student@studenthub.com</code> / <code>student123</code>
       </div>
 
-      <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #64748b;">
-        New to StudentHub? <a href="register.php" style="color: #2563eb; font-weight: 600;">Register here</a>
-      </p>
+      <div style="margin-top: 24px; padding: 14px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; text-align: center;">
+        <span style="color: #1e40af; font-weight: 500;">Don't have an account yet?</span><br>
+        <a href="register.php" style="color: #2563eb; font-weight: bold; font-size: 1.05rem; text-decoration: underline; display: inline-block; margin-top: 4px;">
+          👉 Click here to Sign Up / Register
+        </a>
+      </div>
     </div>
   </main>
 
